@@ -1,0 +1,31 @@
+server:
+  servlet:
+    context-path: 
+  port: 8105
+spring:
+  application:
+    name: transaction
+  profiles:
+    active:
+    - test
+---
+
+config:
+  getClientId: KHksMTun2IWFyfwQ
+  getClientSecret: On2IcfhHBVJqyV0n
+  getTokenStorageMedium: body
+  getFilterTaggedTransactions: UntaggedOnly
+  getAccessToken: https://publicapi.gt.tweb.ttfuel.com/v1/Authorise
+  getTransactionBatcNumber: https://publicapi.gt.tweb.ttfuel.com/v1/TransactionsBatchNumber
+  getTransaction: https://publicapi.gt.tweb.ttfuel.com/v1/Transactions
+  getDeauthorise: https://publicapi.gt.tweb.ttfuel.com/v1/Deauthorise
+
+
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:pruebas
+    username: admin
+    password: admin
+    driver-class-name: oracle.jdbc.OracleDriver
